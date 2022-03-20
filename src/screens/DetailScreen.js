@@ -19,7 +19,7 @@ const DetailScreen = ({route}) => {
 
   useEffect(() => {
     FetchSpecific.get(getData, setScreenStatus, route.params.movieId);
-  }, []);
+  }, [route.params.movieId]);
 
   function DetailScreenStatusBar() {
     const focus = useIsFocused();

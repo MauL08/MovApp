@@ -21,24 +21,24 @@ import HandAnimation from './animation/loading.json';
 
 // Category Images
 import ActionImage from './images/categories/action.png';
-import AdventureImage from './images/categories/Adventure.png';
+import AdventureImage from './images/categories/adventure.png';
 import AnimationImage from './images/categories/animation.png';
-import ComedyImage from './images/categories/Comedy.png';
-import CrimeImage from './images/categories/Crime.png';
-import DocumentaryImage from './images/categories/Documentary.png';
-import DramaImage from './images/categories/Drama.png';
-import FamilyImage from './images/categories/Family.png';
-import FantasyImage from './images/categories/Fantasy.png';
-import HistoryImage from './images/categories/History.png';
-import HorrorImage from './images/categories/Horror.png';
-import MusicImage from './images/categories/Music.png';
-import MysteryImage from './images/categories/Mystery.png';
-import RomanceImage from './images/categories/Romance.png';
-import ScifiImage from './images/categories/Scifi.png';
-import TVImage from './images/categories/TV.png';
-import ThrillerImage from './images/categories/Thriller.png';
-import WarImage from './images/categories/War.png';
-import WesternImage from './images/categories/Western.png';
+import ComedyImage from './images/categories/comedy.png';
+import CrimeImage from './images/categories/crime.png';
+import DocumentaryImage from './images/categories/documentary.png';
+import DramaImage from './images/categories/drama.png';
+import FamilyImage from './images/categories/family.png';
+import FantasyImage from './images/categories/fantasy.png';
+import HistoryImage from './images/categories/history.png';
+import HorrorImage from './images/categories/scary.png';
+import MusicImage from './images/categories/music.png';
+import MysteryImage from './images/categories/mystery.png';
+import RomanceImage from './images/categories/romance.png';
+import ScifiImage from './images/categories/scifi.png';
+import TVImage from './images/categories/tv.png';
+import ThrillerImage from './images/categories/thriller.png';
+import WarImage from './images/categories/war.png';
+import WesternImage from './images/categories/west.png';
 
 export {
   Logo,
