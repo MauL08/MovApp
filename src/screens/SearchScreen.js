@@ -7,6 +7,7 @@ import Color from '../config/utils/color';
 import Loading from '../components/Loading';
 import MovieList from '../components/MovieList';
 import Header from '../components/SearchScreen/Header';
+import {moderateScale} from 'react-native-size-matters';
 
 const SearchScreen = () => {
   const [screenStatus, setScreenStatus] = useState(false);
@@ -45,5 +46,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Color.BACKGROUND_COLOR,
+  },
+  listContainer: {
+    marginBottom: moderateScale(30),
   },
 });

@@ -11,11 +11,11 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Category')}>
-        <Image source={ListIcon} />
+        <Image source={ListIcon} style={{tintColor: '#EEB64A'}} />
       </TouchableOpacity>
       <Image source={Logo} />
       <TouchableOpacity onPress={() => navigation.navigate('Search')}>
-        <Image source={SearchIcon} />
+        <Image source={SearchIcon} style={{tintColor: '#EEB64A'}} />
       </TouchableOpacity>
     </View>
   );
