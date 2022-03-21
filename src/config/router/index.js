@@ -5,6 +5,7 @@ import MainScreen from './BottomTab';
 import DetailScreen from '../../screens/DetailScreen';
 import SearchScreen from '../../screens/SearchScreen';
 import GenresScreen from '../../screens/GenresScreen';
+import CategoryScreen from '../../screens/CategoryScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +34,7 @@ const Router = () => {
       />
       <Stack.Screen
         name="Category"
-        component={GenresScreen}
+        component={CategoryScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

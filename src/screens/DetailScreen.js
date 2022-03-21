@@ -30,8 +30,6 @@ const DetailScreen = ({route}) => {
   }
 
   if (screenStatus) {
-    console.log(route.params.movieId);
-    console.log(data);
     return (
       <SafeAreaView style={styleContainer.container}>
         <FlatList
