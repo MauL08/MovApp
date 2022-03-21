@@ -5,7 +5,7 @@ import {useIsFocused} from '@react-navigation/native';
 import {FetchAll} from '../config/api';
 import Color from '../config/utils/color';
 
-import Genre from '../models/genre';
+import Genres from '../models/newGenre';
 
 import MovieList from '../components/MovieList';
 import Loading from '../components/Loading';
@@ -30,7 +30,11 @@ const GenresScreen = ({route}) => {
   if (screenStatus) {
     const objId = route.params.genreId;
 
-    const genreTitle = Object.keys(Genre).find(key => Genre[key] === objId);
+    const genreTitle = Genres.map(data => {
+      if (data.id === objId) {
+        return data.name;
+      }
+    });
 
     const movieByGenre = data.results.filter(item => {
       return item.genre_ids.includes(objId);
