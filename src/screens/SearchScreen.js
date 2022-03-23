@@ -10,11 +10,10 @@ import Header from '../components/SearchScreen/Header';
 import {moderateScale} from 'react-native-size-matters';
 
 const SearchScreen = () => {
-  const [screenStatus, setScreenStatus] = useState(false);
-  const [data, getData] = useState({});
+  const [data, getData] = useState(false);
 
   useEffect(() => {
-    FetchAll.get(getData, setScreenStatus);
+    FetchAll.get(getData);
   }, []);
 
   function SearchScreenStatusBar() {
@@ -25,7 +24,7 @@ const SearchScreen = () => {
     ) : null;
   }
 
-  if (screenStatus) {
+  if (data) {
     return (
       <View style={styles.container}>
         <SearchScreenStatusBar />

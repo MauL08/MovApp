@@ -4,6 +4,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -23,12 +24,15 @@ const Header = () => {
       </TouchableOpacity>
       <TextInput
         style={styles.input(focus)}
-        placeholder="Seacrh here"
+        placeholder="Search here"
         placeholderTextColor={Color.DISABLE_BUTTON_COLOR}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
       />
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          Alert.alert('Sorry!', 'This feature is not available yet :(');
+        }}>
         <Image source={NextIcon} style={styles.iconStyle} />
       </TouchableOpacity>
     </View>

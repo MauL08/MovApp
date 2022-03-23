@@ -12,11 +12,10 @@ import Latest from '../components/HomeScreen/Latest';
 import Loading from '../components/Loading';
 
 const HomeScreen = () => {
-  const [screenStatus, setScreenStatus] = useState(false);
-  const [data, getData] = useState({});
+  const [data, getData] = useState(false);
 
   useEffect(() => {
-    FetchAll.get(getData, setScreenStatus);
+    FetchAll.get(getData);
   }, []);
 
   function HomeScreenStatusBar() {
@@ -27,7 +26,7 @@ const HomeScreen = () => {
     ) : null;
   }
 
-  if (screenStatus) {
+  if (data) {
     return (
       <SafeAreaView style={styles.container}>
         <HomeScreenStatusBar />

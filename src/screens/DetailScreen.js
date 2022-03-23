@@ -14,11 +14,10 @@ import ActorListTitle from '../components/DetailScreen/ActorList';
 import {styles} from '../components/DetailScreen/ActorList';
 
 const DetailScreen = ({route}) => {
-  const [screenStatus, setScreenStatus] = useState(false);
-  const [data, getData] = useState({});
+  const [data, getData] = useState(false);
 
   useEffect(() => {
-    FetchSpecific.get(getData, setScreenStatus, route.params.movieId);
+    FetchSpecific.get(getData, route.params.movieId);
   }, [route.params.movieId]);
 
   function DetailScreenStatusBar() {
@@ -29,7 +28,7 @@ const DetailScreen = ({route}) => {
     ) : null;
   }
 
-  if (screenStatus) {
+  if (data) {
     return (
       <SafeAreaView style={styleContainer.container}>
         <FlatList

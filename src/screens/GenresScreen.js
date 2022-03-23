@@ -12,11 +12,10 @@ import Loading from '../components/Loading';
 import Header from '../components/GenreScreen/Header';
 
 const GenresScreen = ({route}) => {
-  const [screenStatus, setScreenStatus] = useState(false);
-  const [data, getData] = useState({});
+  const [data, getData] = useState(false);
 
   useEffect(() => {
-    FetchAll.get(getData, setScreenStatus);
+    FetchAll.get(getData);
   }, []);
 
   function GenresScreenStatusBar() {
@@ -27,7 +26,7 @@ const GenresScreen = ({route}) => {
     ) : null;
   }
 
-  if (screenStatus) {
+  if (data) {
     const objId = route.params.genreId;
 
     const genreTitle = Genres.map(data => {
