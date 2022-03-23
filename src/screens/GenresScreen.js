@@ -10,6 +10,7 @@ import Genres from '../models/newGenre';
 import MovieList from '../components/MovieList';
 import Loading from '../components/Loading';
 import Header from '../components/GenreScreen/Header';
+import {moderateScale} from 'react-native-size-matters';
 
 const GenresScreen = ({route}) => {
   const [data, getData] = useState(false);
@@ -43,7 +44,9 @@ const GenresScreen = ({route}) => {
       <View style={styles.container}>
         <GenresScreenStatusBar />
         <Header title={genreTitle} />
-        <MovieList data={movieByGenre} />
+        <View style={{marginBottom: moderateScale(14)}}>
+          <MovieList data={movieByGenre} />
+        </View>
       </View>
     );
   } else {
