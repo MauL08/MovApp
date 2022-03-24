@@ -1,4 +1,12 @@
-import {StyleSheet, StatusBar, FlatList, View, Image, Text} from 'react-native';
+import {
+  StyleSheet,
+  StatusBar,
+  FlatList,
+  View,
+  Image,
+  Text,
+  RefreshControl,
+} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {useIsFocused} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -28,10 +36,21 @@ const DetailScreen = ({route}) => {
     ) : null;
   }
 
+  const [refresh, setRefresh] = useState(false);
+
+  const onRefresh = () => {
+    setRefresh(true);
+    FetchSpecific.get(getData, route.params.movieId);
+    setRefresh(false);
+  };
+
   if (data) {
     return (
       <SafeAreaView style={styleContainer.container}>
         <FlatList
+          refreshControl={
+            <RefreshControl refreshing={refresh} onRefresh={onRefresh} />
+          }
           columnWrapperStyle={{marginHorizontal: moderateScale(18)}}
           numColumns={3}
           data={data.credits.cast}
