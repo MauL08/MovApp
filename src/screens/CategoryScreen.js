@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   StatusBar,
+  Dimensions,
 } from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
@@ -14,6 +15,8 @@ import {useIsFocused} from '@react-navigation/native';
 import ListGenre from '../components/CategoryScreen/ListGenre';
 import Color from '../config/utils/color';
 import {BackIcon} from '../assets';
+
+const {width} = Dimensions.get('screen');
 
 const CategoryScreen = () => {
   const navigation = useNavigation();
@@ -69,5 +72,7 @@ const styles = StyleSheet.create({
   listContainer: {
     marginTop: moderateScale(16),
     marginBottom: moderateScale(45),
+    alignItems: 'center',
+    width: width - 20,
   },
 });

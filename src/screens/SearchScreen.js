@@ -48,5 +48,6 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     marginBottom: moderateScale(30),
+    alignItems: 'center',
   },
 });

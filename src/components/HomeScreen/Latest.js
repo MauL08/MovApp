@@ -9,7 +9,9 @@ const Latest = props => {
   return (
     <View style={styles.container}>
       <Text style={styles.pageTitle}>Latest Updates</Text>
-      <MovieList data={props.data} />
+      <View style={{alignItems: 'center'}}>
+        <MovieList data={props.data} />
+      </View>
     </View>
   );
 };
@@ -25,5 +27,6 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(16),
     fontWeight: 'bold',
     marginLeft: moderateScale(16),
+    textAlign: 'left',
   },
 });

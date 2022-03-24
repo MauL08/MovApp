@@ -19,11 +19,12 @@ const ListGenre = () => {
   return (
     <FlatList
       numColumns={2}
+      showsVerticalScrollIndicator={false}
       data={Data}
       keyExtractor={(item, index) => String(index)}
-      renderItem={({item}) => (
+      renderItem={({item, index}) => (
         <TouchableOpacity
-          style={styles.mainIcon}
+          style={styles.mainIcon(index + 1)}
           onPress={() => navigation.navigate('Genres', {genreId: item.id})}>
           <View style={styles.iconContainer}>
             <Image source={item.image} style={styles.imageIcon} />
@@ -38,12 +39,13 @@ const ListGenre = () => {
 export default ListGenre;
 
 const styles = StyleSheet.create({
-  mainIcon: {
+  mainIcon: icon => ({
     backgroundColor: Color.CONTAINER_COLOR,
     padding: moderateScale(20),
-    margin: moderateScale(12),
+    marginBottom: moderateScale(16),
     borderRadius: moderateScale(8),
-  },
+    marginRight: icon % 2 === 1 ? moderateScale(16) : moderateScale(0),
+  }),
   iconContainer: {
     backgroundColor: Color.DISABLE_BUTTON_COLOR,
     padding: moderateScale(18),

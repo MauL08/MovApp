@@ -5,6 +5,7 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -14,6 +15,8 @@ import Genre from '../models/genre';
 import Color from '../config/utils/color';
 import * as Date from '../config/utils/changeDate';
 import {RateIcon} from '../assets/';
+
+const {width} = Dimensions.get('screen');
 
 const MovieList = props => {
   const navigation = useNavigation();
@@ -79,8 +82,8 @@ export default MovieList;
 const styles = StyleSheet.create({
   listParent: {
     marginTop: moderateScale(20),
-    marginHorizontal: moderateScale(16),
     marginBottom: moderateScale(24),
+    width: width - 30,
   },
   listContainer: {
     backgroundColor: Color.CONTAINER_COLOR,
@@ -106,7 +109,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(14),
     marginBottom: moderateScale(4),
     fontWeight: 'bold',
-    width: moderateScale(200),
+    width: moderateScale(150),
   },
   detailDate: {
     color: Color.TEXT_COLOR,
@@ -128,6 +131,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     marginTop: moderateScale(3),
+    width: moderateScale(150),
   },
   genreSemiContainer: {
     backgroundColor: Color.DISABLE_BUTTON_COLOR,

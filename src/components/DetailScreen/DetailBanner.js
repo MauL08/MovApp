@@ -16,28 +16,30 @@ const DetailBanner = props => {
       />
       <View style={styles.infoContainer}>
         <Text style={styles.titleName}>{props.movieData.original_title}</Text>
-        <Text style={styles.titleTagline}>{props.movieData.tagline}</Text>
-        <View style={styles.releaseContainer}>
-          <Text style={styles.titleStatus}>{props.movieData.status}</Text>
-          <Text style={styles.titleDate}>
-            {Date.changeDate(props.movieData.release_date)}
-          </Text>
-        </View>
-        <View style={styles.rateTimeContainer}>
-          <View style={styles.rateContainer}>
-            <Image source={RateIcon} />
-            <Text style={styles.titleRating}>
-              {props.movieData.vote_average}/10
+        <View style={{alignItems: 'center'}}>
+          <Text style={styles.titleTagline}>{props.movieData.tagline}</Text>
+          <View style={styles.releaseContainer}>
+            <Text style={styles.titleStatus}>{props.movieData.status}</Text>
+            <Text style={styles.titleDate}>
+              {Date.changeDate(props.movieData.release_date)}
             </Text>
           </View>
-          <View style={styles.timeContainer}>
-            <Image
-              source={TimeIcon}
-              style={{tintColor: 'white', width: 12, height: 12}}
-            />
-            <Text style={styles.titleTime}>
-              {Time.changeRuntime(props.movieData.runtime)}
-            </Text>
+          <View style={styles.rateTimeContainer}>
+            <View style={styles.rateContainer}>
+              <Image source={RateIcon} />
+              <Text style={styles.titleRating}>
+                {props.movieData.vote_average}/10
+              </Text>
+            </View>
+            <View style={styles.timeContainer}>
+              <Image
+                source={TimeIcon}
+                style={{tintColor: 'white', width: 12, height: 12}}
+              />
+              <Text style={styles.titleTime}>
+                {Time.changeRuntime(props.movieData.runtime)}
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -49,6 +51,7 @@ export default DetailBanner;
 
 const styles = StyleSheet.create({
   detailContainer: {
+    flex: 1,
     backgroundColor: Color.CONTAINER_COLOR,
     padding: moderateScale(15),
     flexDirection: 'row',
@@ -65,13 +68,14 @@ const styles = StyleSheet.create({
     borderRadius: moderateScale(10),
   },
   infoContainer: {
-    marginLeft: moderateScale(16),
-    width: moderateScale(200),
+    marginHorizontal: moderateScale(14),
+    padding: moderateScale(6),
   },
   titleName: {
     color: Color.TEXT_COLOR,
     fontSize: moderateScale(14),
     fontWeight: 'bold',
+    width: moderateScale(120),
   },
   titleTagline: {
     marginTop: moderateScale(10),
@@ -82,10 +86,12 @@ const styles = StyleSheet.create({
     color: Color.CONTAINER_COLOR,
     fontSize: moderateScale(11),
     fontWeight: 'bold',
+    width: moderateScale(200),
   },
   releaseContainer: {
     marginTop: moderateScale(10),
     flexDirection: 'row',
+    width: moderateScale(200),
     justifyContent: 'space-between',
   },
   titleStatus: {
@@ -94,7 +100,7 @@ const styles = StyleSheet.create({
     paddingVertical: moderateScale(3),
     paddingHorizontal: moderateScale(10),
     borderRadius: moderateScale(5),
-    fontSize: moderateScale(11),
+    fontSize: moderateScale(10),
   },
   titleDate: {
     backgroundColor: Color.DISABLE_BUTTON_COLOR,
@@ -102,11 +108,12 @@ const styles = StyleSheet.create({
     paddingVertical: moderateScale(3),
     paddingHorizontal: moderateScale(10),
     borderRadius: moderateScale(5),
-    fontSize: moderateScale(11),
+    fontSize: moderateScale(10),
   },
   rateTimeContainer: {
     marginTop: moderateScale(10),
     flexDirection: 'row',
+    width: moderateScale(200),
     justifyContent: 'space-between',
   },
   rateContainer: {
@@ -120,7 +127,7 @@ const styles = StyleSheet.create({
   titleRating: {
     marginLeft: moderateScale(4),
     color: Color.TEXT_COLOR,
-    fontSize: moderateScale(11),
+    fontSize: moderateScale(10),
   },
   timeContainer: {
     backgroundColor: Color.DISABLE_BUTTON_COLOR,
@@ -133,6 +140,6 @@ const styles = StyleSheet.create({
   titleTime: {
     marginLeft: moderateScale(4),
     color: Color.TEXT_COLOR,
-    fontSize: moderateScale(11),
+    fontSize: moderateScale(10),
   },
 });

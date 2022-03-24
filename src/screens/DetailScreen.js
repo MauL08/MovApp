@@ -6,6 +6,7 @@ import {
   Image,
   Text,
   RefreshControl,
+  Dimensions,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {useIsFocused} from '@react-navigation/native';
@@ -20,6 +21,8 @@ import BodyDetail from '../components/DetailScreen/BodyDetail';
 import Loading from '../components/Loading';
 import ActorListTitle from '../components/DetailScreen/ActorList';
 import {styles} from '../components/DetailScreen/ActorList';
+
+const {width} = Dimensions.get('screen');
 
 const DetailScreen = ({route}) => {
   const [data, getData] = useState(false);
@@ -51,8 +54,9 @@ const DetailScreen = ({route}) => {
           refreshControl={
             <RefreshControl refreshing={refresh} onRefresh={onRefresh} />
           }
+          showsVerticalScrollIndicator={false}
           columnWrapperStyle={{marginHorizontal: moderateScale(18)}}
-          numColumns={3}
+          numColumns={width > 800 ? 2 : 3}
           data={data.credits.cast}
           keyExtractor={(item, index) => index}
           ListHeaderComponent={() => (
